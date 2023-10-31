@@ -24,7 +24,7 @@ global.APIKeys = { // APIKey Here
 	'https://pencarikode.xyz': 'pais',
 	'https://leyscoders-api.herokuapp.com': 'dappakntlll',
 	'https://api.lolhuman.xyz': 'apikeylu',
-	'https://api.xfarr.com': 'halahhisoka'
+	'https://api.xfarr.com': 'apikeylu' //Regis From api.xfar.com
 }
    // Set pack name sticker on here
 global.packname = "CONVERT BY"
