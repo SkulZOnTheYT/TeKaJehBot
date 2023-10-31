@@ -1,7 +1,7 @@
 {
-	"name": "azamibot-md-multi",
-	"version": "6.0.0",
-	"description": "WhatsApp Bot - Recoded by Zerenity",
+	"name": "tekajehbot",
+	"version": "1.0.0",
+	"description": "Whatsapp bot powered by stundents TeKaJeh",
 	"main": "main.js",
 	"type": "module",
 	"directories": {
@@ -26,16 +26,17 @@
 		"MD",
 		"baileys-md"
 	],
-	"homepage": "https://github.com/clicknetcafe/azamibot-md-multi",
+	"homepage": "https://github.com/SkulZOnTheYT/TeKaJehBot/",
 	"author": {
-		"name": "clicknetcafe"
+		"name": "SkulZOnTheYT"
+		"name": "Fxc4Sanz"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/clicknetcafe/azamibot-md-multi.git"
+		"url": "git+https://github.com/SkulZOnTheYT/TeKaJehBot.git"
 	},
 	"bugs": {
-		"url": "https://github.com/clicknetcafe/azamibot-md-multi/issues"
+		"url": https://github.com/SkulZOnTheYT/TeKaJehBot/issues""
 	},
 	"license": "GPL-3.0-or-later",
 	"dependencies": {
