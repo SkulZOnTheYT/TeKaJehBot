@@ -1,42 +1,20 @@
-# azamibot-md-multi
-
-<a href="https://github.com/clicknetcafe/azamibot-md-multi/network/members"><img title="Forks" src="https://img.shields.io/github/forks/clicknetcafe/azamibot-md-multi?label=Forks&color=blue&style=flat-square"></a>
-<a href="https://github.com/clicknetcafe/azamibot-md-multi/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/clicknetcafe/azamibot-md-multi?label=Watchers&color=green&style=flat-square"></a>
-<a href="https://github.com/clicknetcafe/azamibot-md-multi/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/clicknetcafe/azamibot-md-multi?label=Stars&color=yellow&style=flat-square"></a>
-<a href="https://github.com/clicknetcafe/azamibot-md-multi/graphs/contributors"><img title="Contributors" src="https://img.shields.io/github/contributors/clicknetcafe/azamibot-md-multi?label=Contributors&color=blue&style=flat-square"></a>
-<a href="https://github.com/clicknetcafe/azamibot-md-multi/issues"><img title="Issues" src="https://img.shields.io/github/issues/clicknetcafe/azamibot-md-multi?label=Issues&color=success&style=flat-square"></a>
-<a href="https://github.com/clicknetcafe/azamibot-md-multi/issues?q=is%3Aissue+is%3Aclosed"><img title="Issues" src="https://img.shields.io/github/issues-closed/clicknetcafe/azamibot-md-multi?label=Issues&color=red&style=flat-square"></a>
-<a href="https://github.com/clicknetcafe/azamibot-md-multi/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/clicknetcafe/azamibot-md-multi?label=PullRequest&color=success&style=flat-square"></a>
-<a href="https://github.com/clicknetcafe/azamibot-md-multi/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/clicknetcafe/azamibot-md-multi?label=PullRequest&color=red&style=flat-square"></a>
+# TKJ-MULTI-DEVICE-BOT
 
 
-This Script is for everyone, original base by [`BochilGaming`](https://github.com/BochilGaming/games-wabot-md)
-
-<p align="center">
-      <img src="https://i.ibb.co/DR4vjVN/nother.jpg" width="55%" style="margin-left: auto;margin-right: auto;display: block;">
-</p>
-
-If you want to add Node Modules manually, download here : [`node_modules`](https://cutt.ly/zeren-node-modules)
+This Script is for everyone, original base by
+ [`AzamiBot`](https://github.com/clicknetcafe/azamibot-md-multi)
+ [`BochilGaming`](https://github.com/BochilGaming/games-wabot-md)
 
 This is Script of WhatsApp multi device, working with [`@whiskeysockets/baileys`](https://github.com/whiskeysockets/baileys)
 
-## Join Group Minimalist ツ Sweet
-[![Grup WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://cutt.ly/azamilaifu2)
-**MAX BOT : 4**
+#### SUPORT THIS
+| **TERMUX** | ✅ |
+| **VPS/RDP** | ✅ |
+| **PANEL** | ✅ |
+| **OKTETO** | ⌛ |
 
-
-#### - Support deploy to Heroku (Thx to Ibeng)
-#### - Should work with Railway (Thx to Ibeng)
-
-#### Heroku Buildpack
-| BuildPack | LINK |
-|--------|--------|
-| **FFMPEG** |[here](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) |
-| **IMAGEMAGICK** | [here](https://github.com/DuckyTeam/heroku-buildpack-imagemagick) |
-
-### FOR TERMUX USER
-1. Type mentioned below given commands one by one in Termux.
-```sh
+### HOW TO INSTALL IN TERMUX?
+```bash
 $ pkg upgrade && pkg update
 $ pkg install git -y
 $ pkg install nodejs -y
@@ -192,30 +170,6 @@ pass mongodb url or cloud url to connect to database, by the default it will con
 ---------
 
 ## FAQ
-### How to send button image? (not working anymore)
-```js
-// Syntax
-conn.sendButton(
-      jid, // jid of the user to send the message to
-      text, // text to send
-      foooter, // footer to send
-      buffer, // buffer to send (optional), if you want to send button image, location, etc
-      buttons, // buttons to send, example [['text1', 'id1'], ['text2', 'id2']]
-      quoted, // quoted message to send (optional)
-      options // options to send, example { asLocation: true }
-)
-
-// example 
-conn.sendButton(m.chat, 'Hello world!', '@clicknetcafe', null, [
-      ['Hello', 'hello'], ['Bye', 'bye']
-])
-// example button location
-conn.sendButton(m.chat, 'Hello world!', '@clicknetcafe', 'https://github.com/clicknetcafe', 
-      [['Hello', 'hello'], ['Bye', 'bye']], 
-      null, { asLocation: true }
-)
-```
-
 ### Why my plugins not working in this multi-device?
       
 > Please cek syntax error on your plugins. and maybe your script still using CJS
@@ -265,21 +219,5 @@ global.mods = ['6282337245566']
 #### Special Thanks to
 [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo)
 [![BochilGaming](https://github.com/BochilGaming.png?size=100)](https://github.com/BochilGaming)
-
-#### Contributor
-[![Adiixyz](https://github.com/Adiixyz.png?size=100)](https://github.com/Adiixyz)
-[![idhamthoriqbot](https://github.com/idhamthoriqbot.png?size=100)](https://github.com/idhamthoriqbot)
-[![BlueShiYT](https://github.com/BlueShiYT.png?size=100)](https://github.com/BlueShiYT)
-[![zatu22](https://github.com/zatu22.png?size=100)](https://github.com/zatu22)
-[![unx21](https://github.com/unx21.png?size=100)](https://github.com/unx21)
-[![botstylee](https://github.com/botstylee.png?size=100)](https://github.com/botstylee)
-[![Jauhariq](https://github.com/Jauhariq.png?size=100)](https://github.com/Jauhariq)
-[![Nobuyaki](https://github.com/Nobuyaki.png?size=100)](https://github.com/Nobuyaki)
-[![Aiinne](https://github.com/Aiinne.png?size=100)](https://github.com/Aiinne)
-[![arisawali2014](https://github.com/arisawali2014.png?size=100)](https://github.com/arisawali2014)
-[![ryznxx](https://github.com/ryznxx.png?size=100)](https://github.com/ryznxx)
-[![ZeroChanBot](https://github.com/ZeroChanBot.png?size=100)](https://github.com/ZeroChanBot)
-[![Bintangp02](https://github.com/Bintangp02.png?size=100)](https://github.com/Bintangp02)
-[![itsmeR1F4I](https://github.com/itsmeR1F4I.png?size=100)](https://github.com/itsmeR1F4I)
-[![DineshValor](https://github.com/DineshValor.png?size=100)](https://github.com/DineshValor)
-[![TeamMars20](https://github.com/TeamMars20.png?size=100)](https://github.com/TeamMars20)
+[![DikaArdnt](https://github.com/DikaArdnt.png?size=100)](https://github.com/DikaArdnt)
+[![AzamiBot](https://github.com/clicknetcafe.png?size=100)](https://github.com/clicknetcafe)
