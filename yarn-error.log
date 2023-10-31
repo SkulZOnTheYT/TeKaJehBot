@@ -1,0 +1,126 @@
+Arguments: 
+  /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/usr/share/yarn/bin/yarn.js install
+
+PATH: 
+  /data/data/com.termux/files/usr/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.2.0
+
+Platform: 
+  android arm64
+
+Trace: 
+  Error: EACCES: permission denied, symlink '../../../../similarity/cli.js' -> '/storage/emulated/0/chiko/node_modules/@bochilteam/scraper-religions/node_modules/.bin/similarity'
+
+npm manifest: 
+  {
+  	"name": "azamibot-md-multi",
+  	"version": "6.0.0",
+  	"description": "WhatsApp Bot - Recoded by Zerenity",
+  	"main": "main.js",
+  	"type": "module",
+  	"directories": {
+  		"lib": "lib",
+  		"src": "src",
+  		"plugins": "plugins"
+  	},
+  	"scripts": {
+  		"start": "node main.js",
+  		"test": "node test.js",
+  		"test2": "nodemon index.js"
+  	},
+  	"keywords": [
+  		"termux-whatsapp-bot",
+  		"whatsapp-bot",
+  		"whatsapp",
+  		"js-whatsapp",
+  		"whatsapp",
+  		"Games-wabot",
+  		"wabot-aq",
+  		"multi-device",
+  		"MD",
+  		"baileys-md"
+  	],
+  	"homepage": "https://github.com/clicknetcafe/azamibot-md-multi",
+  	"author": {
+  		"name": "clicknetcafe"
+  	},
+  	"repository": {
+  		"type": "git",
+  		"url": "git+https://github.com/clicknetcafe/azamibot-md-multi.git"
+  	},
+  	"bugs": {
+  		"url": "https://github.com/clicknetcafe/azamibot-md-multi/issues"
+  	},
+  	"license": "GPL-3.0-or-later",
+  	"dependencies": {
+  		"@adiwajshing/keyed-db": "^0.2.4",
+  		"@bochilteam/scraper": "^4.2.4",
+  		"@whiskeysockets/baileys": "^6.4.1",
+  		"awesome-phonenumber": "^5.10.0",
+  		"axios": "^1.5.0",
+  		"brainly-scraper-v2": "^2.2.8",
+  		"cfonts": "^3.2.0",
+  		"chalk": "^5.3.0",
+  		"cheerio": "^1.0.0-rc.12",
+  		"colors": "1.4.0",
+  		"emoji-api": "^3.0.1",
+  		"express": "^4.18.2",
+  		"ffmpeg": "^0.0.4",
+  		"file-type": "^18.5.0",
+  		"fluent-ffmpeg": "^2.1.2",
+  		"formdata-node": "^5.0.1",
+  		"genshin-db": "^4.3.14",
+  		"google-it": "^1.6.4",
+  		"got": "^13.0.0",
+  		"got-scraping": "^3.2.15",
+  		"human-readable": "^0.2.1",
+  		"imagemaker.js": "^2.0.4",
+  		"jsdom": "^22.1.0",
+  		"link-preview-js": "^3.0.5",
+  		"lodash": "^4.17.21",
+  		"lowdb": "^5.1.0",
+  		"moment-timezone": "^0.5.43",
+  		"mongoose": "^7.4.5",
+  		"node-gtts": "^2.0.2",
+  		"node-webpmux": "^3.1.8",
+  		"open": "^9.1.0",
+  		"perf_hooks": "^0.0.1",
+  		"pino": "^8.15.0",
+  		"pino-pretty": "^10.2.0",
+  		"qrcode": "^1.5.3",
+  		"qrcode-terminal": "^0.12.0",
+  		"read-chunk": "^4.0.3",
+  		"readline": "^1.3.0",
+  		"similarity": "^1.2.1",
+  		"socket.io": "^4.7.2",
+  		"spottydl": "^0.2.2",
+  		"syntax-error": "^1.4.0",
+  		"terminal-image": "^2.0.0",
+  		"tesseract.js": "^4.1.0",
+  		"url-regex-safe": "^4.0.0",
+  		"wa-sticker-formatter": "^4.4.4",
+  		"yargs": "^17.7.2",
+  		"yt-search": "^2.10.4",
+  		"ytdl-core": "^4.11.5"
+  	},
+  	"optionalDependencies": {
+  		"@vitalets/google-translate-api": "^9.2.0",
+  		"bing-scraper": "^1.4.11",
+  		"hmfull": "^2.4.3",
+  		"rembg-node": "^2.0.1",
+  		"sagiri": "^3.4.0",
+  		"scathach-api": "^1.0.16",
+  		"tinycolor2": "^1.6.0"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
