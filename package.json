@@ -27,10 +27,10 @@
 		"baileys-md"
 	],
 	"homepage": "https://github.com/SkulZOnTheYT/TeKaJehBot/",
-	"author": {
-		"name": "SkulZOnTheYT"
-		"name": "Fxc4Sanz"
-	},
+	"author": [
+                "SkulZOnTheYT",
+                "Fxc4Sanz"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/SkulZOnTheYT/TeKaJehBot.git"
