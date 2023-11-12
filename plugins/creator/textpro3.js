@@ -23,7 +23,7 @@ handler.menutextpro = ['textpro <effect> <text>']
 handler.tagstextpro = ['offi']
 handler.command = /^((te(xt|ks))?pro)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
