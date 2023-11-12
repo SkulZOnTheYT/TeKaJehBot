@@ -5,8 +5,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 	let stiker = false
 	try {
 		let [pack, aut] = text.split('|')
-		if (!pack) pack = packname
-		if (!aut) aut = author
+		pack = pack || '-'
+		aut = aut || '-'
 		let mime = m.quoted.mimetype || ''
 		if (!/webp/.test(mime)) throw `Reply / Tag Stiker Sesuai Format :\n*${usedPrefix + command} <packname>|<author>*`
 		let img = await m.quoted.download()
@@ -25,7 +25,7 @@ handler.help = ['takestick <packname>|<author>']
 handler.tags = ['creator']
 handler.command = /^(((stic?ker)?wm(stic?ker)?)|(takestic?k(er)?)|colong)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
