@@ -18,7 +18,7 @@ handler.menutextpro = ['phub <text1>|<text2>']
 handler.tagstextpro = ['search']
 handler.command = /^(phub)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
