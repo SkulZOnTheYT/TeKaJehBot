@@ -12,7 +12,7 @@ handler.help = ['duck']
 handler.tags = ['entertainment']
 handler.command = /^((random)?(duck|bebek)(random)?)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
