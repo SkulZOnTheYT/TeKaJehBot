@@ -16,7 +16,7 @@ handler.menudownload = ['snackvideo <url>']
 handler.tagsdownload = ['search']
 handler.command = /^(snackvideo)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
