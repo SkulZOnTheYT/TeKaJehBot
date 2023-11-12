@@ -16,7 +16,7 @@ handler.menudownload = ['cocofun <url>','cocofunwm <url>']
 handler.tagsdownload = ['search']
 handler.command = /^(cocofun((no)?wm)?)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
