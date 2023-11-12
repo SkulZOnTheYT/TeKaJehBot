@@ -28,7 +28,7 @@ handler.menudownload = ['pixivdl <id>']
 handler.tagsdownload = ['search']
 handler.command = /^(pixiv(dl|download))$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
