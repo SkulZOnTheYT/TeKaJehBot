@@ -66,7 +66,7 @@ handler.menudownload = ['spotify <teks>','spotifydl <url>']
 handler.tagsdownload = ['search']
 handler.command = /^(spot(ify)?(mp3|audio)?(dl|search)?)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
