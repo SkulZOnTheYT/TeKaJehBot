@@ -26,7 +26,7 @@ handler.help = ['cecan <option>','cecan2','anony','bocil','china','harley','hija
 handler.tags = ['entertainment']
 handler.command = /^(cecan2?|anony|bocil|china|harley|hijaber|indonesia|japan|korea|malaysia|thailand|vietnam)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
