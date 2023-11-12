@@ -14,7 +14,7 @@ handler.menuoxy = ['shadow','cup','cup1','romance','smoke','burnpaper','lovemess
 handler.tagsoxy = ['search']
 handler.command = /^(shadow|cup|cup1|romance|smoke|burnpaper|lovemessage|undergrass|love|coffe|woodheart|woodenboard|summer3d|wolfmetal|nature3d|underwater|golderrose|summernature|fallleaves|flamming|harrypotter|carvedwood)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
