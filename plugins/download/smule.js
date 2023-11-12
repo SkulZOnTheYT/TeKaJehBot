@@ -17,7 +17,7 @@ handler.menudownload = ['smulemp3 <url>','smulevideo <url>']
 handler.tagsdownload = ['search']
 handler.command = /^(smule(v(ideo)?|mp3|a(udio)?)?)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
