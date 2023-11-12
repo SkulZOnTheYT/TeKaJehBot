@@ -18,7 +18,7 @@ handler.menuephoto = ['valorantbanner <text>']
 handler.tagsephoto = ['search']
 handler.command = /^(valorantbanner)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
