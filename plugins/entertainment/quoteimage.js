@@ -17,7 +17,7 @@ handler.help = ['quoteimage']
 handler.tags = ['entertainment']
 handler.command = /^(quotes?image)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
