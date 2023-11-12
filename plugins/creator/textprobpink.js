@@ -14,7 +14,7 @@ handler.menutextpro = ['bpink <text>']
 handler.tagstextpro = ['search']
 handler.command = /^(bpink)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
