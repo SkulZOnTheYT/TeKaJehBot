@@ -23,7 +23,7 @@ handler.help = ['quote']
 handler.tags = ['entertainment']
 handler.command = /^(quotes?)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
