@@ -43,7 +43,7 @@ handler.help = ['brainly <teks>']
 handler.tags = ['information']
 handler.command = /^(brainly)$/i
 
-handler.premium = true
+handler.premium = false
 handler.limit = true
 
 export default handler
