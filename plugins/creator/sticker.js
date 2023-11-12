@@ -1,48 +1,38 @@
-import { sticker, addExif, video2webp } from '../../lib/sticker.js'
-import uploadImage from '../../lib/uploadImage.js'
-import { webp2png } from '../../lib/webp2mp4.js'
+import { sticker, sticker3, addExif, video2webp } from '../../lib/sticker.js'
+import { isUrl } from '../../lib/func.js'
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-  let stiker = false
-  try {
-    let q = m.quoted ? m.quoted : m
-    let mime = (q.msg || q).mimetype || q.mediaType || ''
-    if (/webp|image|video/g.test(mime)) {
-      if (/video/g.test(mime)) if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
-      let img = await q.download?.()
-      if (!img) throw `balas gambar/video/stiker dengan perintah ${usedPrefix + command}`
-      try {
-        stiker = await sticker(img, false, global.packname, global.author)
-      } catch (e) {
-        console.error(e)
-      } finally {
-        if (!stiker) {
-          let out
-          if (/webp/g.test(mime)) out = await webp2png(img)
-          else if (/video/g.test(mime)) out = await uploadImage(img)
-          if (!out || typeof out !== 'string') out = await uploadImage(img)
-          stiker = await sticker(false, out, global.packname, global.author)
-        }
-      }
-    } else if (args[0]) {
-      if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
-      else return m.reply('URL tidak valid!')
-    }
-  } catch (e) {
-    console.error(e)
-    if (!stiker) stiker = e
-  } finally {
-    if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
-    else throw 'Conversion failed'
-  }
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+	let c = command
+	try {
+		if (isUrl(text)) {
+			let s = await sticker(false, text, packname, author)
+			await conn.sendFile(m.chat, s, '', '', m)
+		} else {
+			let buffer, q = m.quoted ? m.quoted : m
+			let mime = (q.msg || q).mimetype || q.mediaType || ''
+			let fps = command.replace(/\D/g, '')
+			if (/image|video/g.test(mime)) {
+				let ch, img = await q.download?.()
+				if (/video/g.test(mime)) {
+					if ((q.msg || q).seconds > 30) return m.reply('Maksimal 10 detik!')
+					ch = (q.gifPlayback || q.message?.videoMessage?.gifPlayback) ? 1 : 2
+				} else ch = 0
+				if (ch > 0) buffer = await (/webp/g.test(mime) ? addExif(img, packname, author) : ch > 1 ? addExif(await video2webp(img, isNaN(fps) ? 15 : fps), packname, author) : sticker(img, false, packname, author))
+				else {
+					try { buffer = await addExif(await sticker3(img, false), packname, author) }
+					catch { buffer = await sticker(img, false, packname, author) }
+				}
+				await conn.sendFile(m.chat, buffer, '', '', m)
+			} else return m.reply(`Kirim Gambar/Video Dengan Caption *${usedPrefix + c}*\nDurasi Video 1-9 Detik`)
+		}
+	} catch (e) {
+		console.log(e)
+		throw 'conversion failed.'
+	}
 }
-handler.help = ['stiker (caption|reply media)', 'stiker <url>', 'stikergif (caption|reply media)', 'stikergif <url>']
-handler.tags = ['sticker']
-handler.command = /^s(tic?ker)?(gif)?(wm)?$/i
-handler.limit = true
+
+handler.help = ['', '30fps', '45fps', '60fps'].map(v => 'sticker' + v)
+handler.tags = ['creator']
+handler.command = /^(s(tic?ker)?(gif)?(30|45|60)?(fps)?)$/i
 
 export default handler
-
-const isUrl = (text) => {
-  return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
-}
