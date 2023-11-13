@@ -1,22 +1,47 @@
-import { youtubedl } from '@bochilteam/scraper-sosmed'
-import ytdl from 'ytdl-core'
-import { niceBytes } from '../../lib/func.js'
-import { soundcloud } from '../../lib/scrape.js'
-import db from '../../lib/database.js'
+import { TiktokDL } form '@tobyg74/tiktok-api-dl'
 
-export async function before(m, {conn, body}) {
-let chat = db.data.settings[conn.user.jid]
-if (chat.autodl) {
-	if (/https?:\/\/(www\.|v(t|m|vt)\.|t\.)?tiktok\.com/i.test(m.text)) {
-  // return m.reply(`Example : #tiktok https://vt.tiktok.com/ZSwWCk5o/`)
-    await m.reply("Loading...")
-    let req = await fetch(global.API('xfarr', '/api/download/tiktoknowm', { url: m.text }, 'apikey')) //GET INFO TIKTOK NOWM
-    let json = await req.json()
-    console.log(json.result.url)
-    conn.sendFile(m.chat, json.result.url, `${json.result.description}.mp4`, '[ TIKTOK VIDEO DOWNLOADER ]', m)
-   }
+async function downloadTikTokVideo(url) {
+  try {
+    const result = await TiktokDL(url, {
+      version: "v1" // version: "v1" | "v2" | "v3"
+    });
+
+    console.log(result);
+    return result; 
+  } catch (error) {
+    console.error("Error:", error.message);
+   
+    throw error; 
   }
- }
+}
+
+async function handler.command(command, message) {
+  const args = message.body.split(' ');
+
+  if (args.length !== 2 || args[0] !== '.tiktok') {
+    console.log('Format perintah tidak valid');
+    return;
+  }
+
+  const tiktok_url = args[1];
+
+  try {
+    const result = await downloadTikTokVideo(tiktok_url);
+
+    const replyMessage = `Video TikTok berhasil diunduh! Hasil: ${result}`;
+   
+    console.log(replyMessage);
+  } catch (error) {
+    
+    const errorMessage = `Terjadi kesalahan saat mengunduh video TikTok: ${error.message}`;
+    
+    console.error(errorMessage);
+  }
+}
+
+// Contoh penggunaan handler command
+const command = '.tiktok https://vt.tiktok.com/ZS84BnrU9';
+const message = { body: command };
          
 handler.help = ['tiktok <url>','tiktokdl <url>', 'tiktokslide <url>']
 handler.tags = ['download']
