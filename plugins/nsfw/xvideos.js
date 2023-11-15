@@ -1,19 +1,21 @@
+import { niceBytes } from '../../lib/func.js'
 import { isUrl } from '../../lib/func.js'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 	if (!text) throw `Just type query what u need :\nUsage : *${usedPrefix + command} step mother*\n\nFor show info / download link :\nUsage : *${usedPrefix + command} xvideos_url*`
 	if (isUrl(text)) {
 		try {
-			let anu = await (await fetch(`https://oni-chan.my.id/api/adults/xvideos-download?link=${text}&apikey=kurumi-tosaka`)).json()
+			let anu = await (await fetch(`https://oni-chan.my.id/api/adults/xvideos-download?link=${text}&apikey=WHra-B087-HYtG`)).json()
 			if (!anu.status) throw Error()
-			anu = anu.result.result
+			let list = Object.keys(anu.video).toString()
+		        let data = anu.video[`${list.includes('36') ? '360p' : list.includes('24') ? '240p' : '144p'}`]
+		        let url = await data.download()
+		        if (data.fileSize > 400000) return m.reply(`Filesize: ${data.fileSizeH}\nTidak dapat mengirim, maksimal file 400 MB`)
 			let txt = `*${anu.title}*\n\n`
-			+ `*views :* ${anu.views}\n`
-			+ `*vote :* ${anu.vote}\n`
-			+ `*likes :* ${anu.likes}\n`
-			+ `*dislikes :* ${anu.deslikes}\n`
-			+ `*url :* _${anu.url}_`
-			await conn.sendMsg(m.chat, { image: { url: anu.thumb }, caption: txt }, { quoted : m }).catch(_ => m.reply(txt))
+		        + `⭔ Watch : ${args[0]}\n`
+		        + `⭔ Resolution : ${data.quality}\n`
+		        + `⭔ Size : ${data.fileSizeH}`
+		        await conn.sendFile(m.chat, url, `${anu.title}.mp4`, txt, 
 		} catch (e) {
 			console.log(e)
 			throw 'invalid url / server down.'
