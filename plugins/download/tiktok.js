@@ -1,54 +1,32 @@
-import { TiktokDL } form '@tobyg74/tiktok-api-dl'
+import { niceBytes } from '../../lib/func.js';
 
-async function downloadTikTokVideo(url) {
-  try {
-    const result = await TiktokDL(url, {
-      version: "v1" // version: "v1" | "v2" | "v3"
-    });
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+    if (!text) throw `Usage : *${usedPrefix + command} <url>'`;
 
-    console.log(result);
-    return result; 
-  } catch (error) {
-    console.error("Error:", error.message);
-   
-    throw error; 
-  }
-}
+    try {
+        let anu = await (await fetch(`https://oni-chan.my.id/api/download/tiktok?url=${text}`)).json();
+        if (!anu.status) throw Error();
+        caption = anu.caption;
+        anu = anu.server1;
+        let data = anu.url;
+        let url = data;
+        if (data.fileSize > 400000) return m.reply(`Filesize: ${data.fileSizeH}\nTidak dapat mengirim, maksimal file 400 MB`);
 
-async function handler.command(command, message) {
-  const args = message.body.split(' ');
+        let txt = `*${caption}*\n\n` +
+            `⭔ Resolution : ${anu.quality}\n` +
+            `⭔ Size : ${data.fileSizeH}`;
 
-  if (args.length !== 2 || args[0] !== '.tiktok') {
-    console.log('Format perintah tidak valid');
-    return;
-  }
+        await conn.sendFile(m.chat, url, `${anu.caption}.mp4`, txt);
+    } catch (e) {
+        console.log(e);
+        throw 'invalid url / server down.';
+    }
+};
 
-  const tiktok_url = args[1];
+handler.help = ['tiktok <url>', 'tiktokdl <url>', 'tiktokslide <url>'];
+handler.tags = ['download'];
+handler.command = /^(tiktok(dl)?(slide|image)?)$/i;
+handler.premium = false;
+handler.limit = true;
 
-  try {
-    const result = await downloadTikTokVideo(tiktok_url);
-
-    const replyMessage = `Video TikTok berhasil diunduh! Hasil: ${result}`;
-   
-    console.log(replyMessage);
-  } catch (error) {
-    
-    const errorMessage = `Terjadi kesalahan saat mengunduh video TikTok: ${error.message}`;
-    
-    console.error(errorMessage);
-  }
-}
-
-// Contoh penggunaan handler command
-const command = '.tiktok https://vt.tiktok.com/ZS84BnrU9';
-const message = { body: command };
-         
-handler.help = ['tiktok <url>','tiktokdl <url>', 'tiktokslide <url>']
-handler.tags = ['download']
-handler.command = /^(tiktok(dl)?(slide|image)?)$/i
-
-
-handler.premium = false
-handler.limit = true
-
-export default handler
+export default handler;
